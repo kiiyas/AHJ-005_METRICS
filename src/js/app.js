@@ -1,7 +1,9 @@
 import DOMpopHandler from './DOMHandler';
 
 const container = document.querySelector('.container');
-const button = container.querySelector('.btn');
+const button = document.querySelector('.btn');
+// const container = document.getElementsByClassName('container');
+// const button = document.getElementsByClassName('btn');
 
 const addPopover = new DOMpopHandler(container, button);
 
@@ -11,3 +13,5 @@ document.addEventListener('click', (event) => {
     addPopover.colorChanger();
   }
 });
+
+export { container, button };

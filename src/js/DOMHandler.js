@@ -9,6 +9,7 @@ export default class DOMpopHandler {
     if (!document.querySelector('div.container div.btn-popover-container')) {
       this.btnPopover = document.createElement('div');
       this.btnPopover.classList.add('btn-popover-container');
+      console.log(this.button);
       this.btnPopover.innerHTML = `<div class="btn-popover-title">${this.button.dataset.header}</div>
     <div class="btn-popover-body">${this.button.dataset.content}</div>`;
       this.button.offsetParent.appendChild(this.btnPopover);
