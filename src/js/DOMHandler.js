@@ -1,17 +1,17 @@
 /* eslint-disable max-len */
 export default class DOMpopHandler {
-  constructor(container, button) {
-    this.container = container;
-    this.button = button;
+  constructor() {
+    this.container = document.querySelector('.container');
+    this.button = document.querySelector('.btn');
   }
 
   create() {
     if (!document.querySelector('div.container div.btn-popover-container')) {
       this.btnPopover = document.createElement('div');
       this.btnPopover.classList.add('btn-popover-container');
-      console.log(this.button);
+      // console.log(this.button);
       this.btnPopover.innerHTML = `<div class="btn-popover-title">${this.button.dataset.header}</div>
-    <div class="btn-popover-body">${this.button.dataset.content}</div>`;
+      <div class="btn-popover-body">${this.button.dataset.content}</div>`;
       this.button.offsetParent.appendChild(this.btnPopover);
       this.btnPopover.style.bottom = `${this.button.offsetHeight + 20}px`;
     } else {
